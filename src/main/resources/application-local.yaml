@@ -8,6 +8,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
         format_sql: true
+        generate_statistics: true
     database: default
     show-sql: true
     hibernate:
@@ -19,7 +20,7 @@ spring:
     username: sa
     password: sa
     hikari:
-      pool-name: A2ZHikariPool
+      pool-name: BootUIHikariPool
       register-mbeans: true
       maximum-pool-size: 64 # Tuned based on DB server cores
       minimum-idle: 32     # Half of max pool size for a balance
@@ -44,6 +45,16 @@ spring:
         web-allow-others: false
   threads:
     virtual:
+      enabled: true
+  security:
+    user:
+      name: user
+      password: password
+      roles:
+        - USER
+        - ADMIN
+  devtools:
+    livereload:
       enabled: true
 
 ## Spring Boot actuator endpoints
@@ -88,3 +99,11 @@ bootui:
   enabled: on
   mcp:
     enabled: on
+  sql-trace:
+    capture-parameters: true
+
+logging:
+  level:
+    root: debug
+    sun: INFO
+    javax: INFO

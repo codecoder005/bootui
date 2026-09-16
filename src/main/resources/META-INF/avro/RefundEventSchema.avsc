@@ -1,0 +1,42 @@
+{
+  "type": "record",
+  "name": "RefundEvent",
+  "namespace": "avro.com.popcorn.refund",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": [
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "The first name of the customer requesting the refund"
+    },
+    {
+      "name": "middleName",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "The middle name of the customer requesting the refund",
+      "default": null
+    },
+    {
+      "name": "lastName",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "The last name of the customer requesting the refund",
+      "default": null
+    }
+  ],
+  "version": 1
+}

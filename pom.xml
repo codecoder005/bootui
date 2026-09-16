@@ -29,6 +29,7 @@
 	<properties>
 		<java.version>25</java.version>
 		<springdoc-openapi-starter-webmvc-ui.version>3.1.0</springdoc-openapi-starter-webmvc-ui.version>
+		<boot-ui.version>1.14.1</boot-ui.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -53,9 +54,21 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
 			<groupId>com.julien-dubois.bootui</groupId>
 			<artifactId>bootui-spring-boot-starter</artifactId>
-			<version>1.14.1</version>
+			<version>${boot-ui.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springdoc</groupId>
